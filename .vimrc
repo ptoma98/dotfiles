@@ -5,11 +5,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'arcticicestudio/nord-vim'
+Plug 'altercation/solarized'
+Plug 'dense-analysis/ale'
 " Initialize plugin system
 call plug#end()
 
-colorscheme nord
+let g:solarized_termcolors=256
+set background=light
+colorscheme solarized   
 
 syntax enable " enables syntax processing
 set tabstop=4       " number of visual spaces per TAB
@@ -59,3 +62,6 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
+" ALE Options
+let g:airline#extensions#ale#enabled = 1
+let b:ale_linters = ['pyflakes', 'flake8', 'pylint']

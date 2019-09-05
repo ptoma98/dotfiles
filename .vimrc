@@ -1,4 +1,3 @@
-
 call plug#begin('~/.vim/plugged')
 " https://github.com/junegunn/vim-plug#example
 
@@ -7,6 +6,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/solarized'
 Plug 'dense-analysis/ale'
+Plug 'tpope/vim-fugitive'
+
 " Initialize plugin system
 call plug#end()
 
@@ -64,4 +65,5 @@ let NERDTreeDirArrows = 1
 
 " ALE Options
 let g:airline#extensions#ale#enabled = 1
-let b:ale_linters = ['pyflakes', 'flake8', 'pylint']
+let b:ale_linters = ['pyflakes']
+

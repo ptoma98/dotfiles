@@ -1,0 +1,102 @@
+{
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    },
+    "port": 18789,
+    "bind": "loopback",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      },
+      "botToken": "${OPENCLAW_TELEGRAM_TOKEN}"
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "gemini",
+        "openaiCodex": {}
+      },
+      "fetch": {
+        "enabled": true
+      }
+    },
+    "profile": "coding"
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-15T23:31:41.472Z",
+    "lastRunVersion": "2026.4.14",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.4.14",
+    "lastTouchedAt": "2026-04-15T23:31:41.674Z"
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      },
+      "google": {
+        "config": {
+          "webSearch": {
+            "apiKey": "${GEMINI_API_KEY}",
+            "model": "gemini-2.5-flash"
+          }
+        },
+        "enabled": true
+      },
+      "anthropic": {
+        "enabled": true
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "/home/ubuntu/.openclaw/workspace",
+      "models": {
+        "anthropic/claude-sonnet-4-6": {}
+      },
+      "model": {
+        "primary": "anthropic/claude-sonnet-4-6"
+      }
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "auth": {
+    "profiles": {
+      "anthropic:default": {
+        "provider": "anthropic",
+        "mode": "api_key"
+      }
+    }
+  },
+  "env": {
+	  "GOOGLE_API_KEY": "${OPENCLAW_GOOGLE_MAPS_API_KEY}",
+	  "GOOGLE_MAPS_LANG": "en"
+  },
+  "skills": {
+    "entries": {
+      "goplaces": {
+        "apiKey": "${OPENCLAW_GOPLACES_API_KEY}"
+      }
+    }
+  }
+}
